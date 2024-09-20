@@ -1,0 +1,240 @@
+/* 全局样式 */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #006400; /* 深绿色文字 */
+    background: url('微信图片_20231009043831.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* 稍微透明的白色背景 */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* 主页样式 */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #006400; /* 深绿色 */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 关于我样式 */
+.about {
+    padding: 5rem 0;
+    background: url('微信图片_20231009043831.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    z-index: 1;
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 视频展示样式 */
+.videos {
+    padding: 5rem 0;
+    background: url('微信图片_20231009043831.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.videos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    z-index: 1;
+}
+
+.videos .container {
+    position: relative;
+    z-index: 2;
+}
+
+.videos .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.video-container {
+    margin-bottom: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container video {
+    flex-grow: 1;
+    object-fit: cover;
+}
+
+.video-container h3 {
+    margin-top: 1rem;
+    color: #006400;
+}
+
+.video-container p {
+    color: #333;
+}
+
+/* 视频容器样式 */
+.video-container {
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* 项目样式 */
+.projects {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); /* 稍微透明的白色背景 */
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+/* 联系方式样式 */
+.contact {
+    padding: 5rem 0;
+}
+
+/* 页首样式 */
+.forest-header {
+    background-color: #228B22; /* Forest Green 深绿色 */
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 1000; /* 确保页首在导航栏之上 */
+}
+
+.forest-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 页首样式 */
+.forest-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 页脚样式 */
+footer {
+    background-color: rgba(51, 51, 51, 0.9); /* 稍微透明的深色背景 */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .col-md-4 {
+        width: 100%;
+    }
+}
+
+/* 添加图片样式 */
+.about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* 可选：添加圆角 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 可选：添加阴影效果 */
+}
