@@ -1,240 +1,156 @@
-/* 全局样式 */
+:root {
+    --primary-color: #4CAF50;
+    --light-green: #8BC34A;
+    --dark-green: #2E7D32;
+    --text-color: #333333;
+    --bg-color: #E8F5E9;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #006400; /* 深绿色文字 */
-    background: url('微信图片_20231009043831.jpg') no-repeat center center fixed;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.bg-image {
+    background-image: url('images/微信图片_20231009043831.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-h1, h2, h3 {
-    font-weight: bold;
-}
-
-/* 导航栏样式 */
-.navbar {
-    background-color: rgba(255, 255, 255, 0.9) !important; /* 稍微透明的白色背景 */
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-link {
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #007bff;
-}
-
-/* 主页样式 */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    padding: 100px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background-color: rgba(76, 175, 80, 0.7);
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    color: #006400; /* 深绿色 */
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-    z-index: 1;
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
-.hero .container {
-    position: relative;
-    z-index: 2;
+section {
+    padding: 80px 0;
+    background-color: rgba(232, 245, 233, 0.9);
 }
 
-/* 关于我样式 */
-.about {
-    padding: 5rem 0;
-    background: url('微信图片_20231009043831.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-    z-index: 1;
-}
-
-.about .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* 视频展示样式 */
-.videos {
-    padding: 5rem 0;
-    background: url('微信图片_20231009043831.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
-.videos::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-    z-index: 1;
-}
-
-.videos .container {
-    position: relative;
-    z-index: 2;
-}
-
-.videos .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-}
-
-.video-container {
-    margin-bottom: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.video-container video {
-    flex-grow: 1;
-    object-fit: cover;
-}
-
-.video-container h3 {
-    margin-top: 1rem;
-    color: #006400;
-}
-
-.video-container p {
-    color: #333;
-}
-
-/* 视频容器样式 */
-.video-container {
-    margin-bottom: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.video-container video {
-    width: 100%;
+.achievement-card, .portfolio-item {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border: 1px solid var(--light-green);
     border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-/* 项目样式 */
-.projects {
-    padding: 5rem 0;
-    background-color: #f8f9fa;
+.achievement-card:hover, .portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card {
-    margin-bottom: 2rem;
-    transition: box-shadow 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.9); /* 稍微透明的白色背景 */
-}
-
-.card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-}
-
-/* 联系方式样式 */
-.contact {
-    padding: 5rem 0;
-}
-
-/* 页首样式 */
-.forest-header {
-    background-color: #228B22; /* Forest Green 深绿色 */
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    width: 100%;
+.timeline {
     position: relative;
-    z-index: 1000; /* 确保页首在导航栏之上 */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.forest-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
 }
 
-/* 页首样式 */
-.forest-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
 }
 
-/* 页脚样式 */
-footer {
-    background-color: rgba(51, 51, 51, 0.9); /* 稍微透明的深色背景 */
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--light-green);
+    border: 4px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+.timeline-item:nth-child(odd) {
+    left: 0;
 }
 
-.social-links a:hover {
-    color: #007bff;
+.timeline-item:nth-child(even) {
+    left: 50%;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+.timeline-item:nth-child(even)::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
     }
-    .col-md-4 {
+    
+    .timeline-item {
         width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item::after {
+        left: 15px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0%;
     }
 }
 
-/* 添加图片样式 */
-.about img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; /* 可选：添加圆角 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 可选：添加阴影效果 */
+#quick-info i {
+    color: var(--primary-color);
 }
+
+.fas, .far, .fab {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+h2 .fas, h2 .far, h2 .fab {
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: var(--dark-green) !important;
+    color: #ffffff;
+}
+
+/* 添加其他需要的样式 */
